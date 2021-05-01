@@ -262,5 +262,86 @@ Form Button.
 ## HTML DOM
 ### Pilihan menggunakan checkBox dengan perhitungan otomatis
 ~~~
+<!--
+    File: daftar_menu.html
+//-->
+<html>
+<head>
+    <title>Daftar Menu</title>
+    <script>
+        function hitung(ele) {
+            var total = document.getElementById('total').value;
+                total = (total ? parseInt(total) : 0);
+            var harga = 0;
+            
+            if (ele.checked) {
+                harga = ele.value;
+                total += parseInt(harga);
+            } else {
+                harga = ele.value;
+                if (total > 0)
+                    total -= parseInt(harga);
+            }
+            document.getElementById('total').value = total;
+        }
+    </script>
+</head>    
+<body>
+    <h1>Daftar Menu Makanan</h1>
+    <label><input type="checkbox" value="5000" id="menu1" onclick="hitung(this);"> Ayam Goreng Rp. 5.000</label><br>
+    <label><input type="checkbox" value="500" id="menu2" onclick="hitung(this);"> Tempe Goreng Rp. 500</label><br>
+    <label><input type="checkbox" value="2500" id="menu3" onclick="hitung(this);"> Telur Dadar Rp. 2.500</label><br>
+    <strong>Total Bayar: Rp. <input id="total" type="text"/></strong>
+</body>
+</html>
+~~~
+![Checkbox](https://user-images.githubusercontent.com/81541764/116782572-26663600-aab4-11eb-9ef3-494c7b105311.JPG)
+
+## Pertanyaan dan Tugas
+1. Buat script untuk melakukan validasi pada isian form.
 
 ~~~
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Membuat Form Validasi dengan Javascript</title>
+	<link rel="stylesheet" type="text/css" href="style_form.css">
+</head>
+<body>
+	<center><h2>PENGISIAN FORM</h2></center>
+	<div class="login">
+		<form action="#" method="POST" onSubmit="validasi()">
+			<div>
+				<label>Nama Lengkap:</label>
+				<input type="text" name="nama" id="nama" />
+			</div>
+			<div>
+				<label>Email:</label>
+				<input type="email" name="email" id="email" />
+			</div>
+			<div>
+				<label>Alamat:</label>
+				<textarea cols="40" rows="5" name="alamat" id="alamat"></textarea>
+			</div>
+			<div>
+				<input type="submit" value="Daftar" class="tombol">
+			</div>
+		</form>
+	</div>
+</body>
+<script type="text/javascript">
+	function validasi() {
+		var nama = document.getElementById("nama").value;
+		var email = document.getElementById("email").value;
+		var alamat = document.getElementById("alamat").value;
+		if (nama != "" && email!="" && alamat !="") {
+			return true;
+		}else{
+			alert('Anda harus mengisi data dengan lengkap !');
+		}
+	}
+</script>
+</html>
+~~~
+![Form pengisian](https://user-images.githubusercontent.com/81541764/116782763-32062c80-aab5-11eb-932a-feed13483f2c.JPG)
+
