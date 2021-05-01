@@ -343,5 +343,8 @@ Form Button.
 </script>
 </html>
 ~~~
+![Form pengisian (Source)](https://user-images.githubusercontent.com/81541764/116782828-91643c80-aab5-11eb-8847-be26926b8af8.JPG)
+
+Simpan dan refresh browser, kemudian lihat hasilnya seperti dibawah ini.
 ![Form pengisian](https://user-images.githubusercontent.com/81541764/116782763-32062c80-aab5-11eb-932a-feed13483f2c.JPG)
 
