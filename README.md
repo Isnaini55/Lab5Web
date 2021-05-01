@@ -336,7 +336,7 @@ Form Button.
 		var alamat = document.getElementById("alamat").value;
 		if (nama != "" && email!="" && alamat !="") {
 			return true;
-		}else{
+		} else {
 			alert('Anda harus mengisi data dengan lengkap !');
 		}
 	}
